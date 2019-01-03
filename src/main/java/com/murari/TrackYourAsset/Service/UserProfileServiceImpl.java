@@ -7,18 +7,12 @@ import com.murari.TrackYourAsset.Repository.UserProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class UserProfileServiceImpl implements UserProfileService {
     @Autowired
     private UserProfileRepository userProfileRepository;
 
     @Override
-   /* public Optional<UserProfileEntity> findById(String docId){
-        return userProfileRepository.findById(docId);
-    }
-    */
     public UserProfileEntity findById(String docId) {
         return userProfileRepository.findById(docId).get();
     }
@@ -32,4 +26,6 @@ public class UserProfileServiceImpl implements UserProfileService {
     public void deleteById(String docId) {
         userProfileRepository.deleteById(docId);
     }
+
+
 }
